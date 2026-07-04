@@ -54,7 +54,7 @@ body {
 }
 
 /*==============================
-  背景の模様・装飾（ドットの輝きアップ＆格子）
+  背景の模様・装飾（クッキリした小ドット＆格子）
 ==============================*/
 body::before {
     content: "";
@@ -63,20 +63,18 @@ body::before {
     pointer-events: none;
     z-index: -1;
     
-    /* ドットの不透明度を上げ、サイズに強弱をつけることで「キラキラ感」を強調 */
+    /* 大きめドットを削除し、小さいドットの色をハッキリした白に変更 */
     background-image: 
-        /* 強めに輝く大きめのドット */
-        radial-gradient(circle, rgba(255, 255, 255, 0.35) 1.5px, transparent 1.5px),
-        /* 奥で淡く輝く小さめのドット */
-        radial-gradient(circle, rgba(212, 175, 55, 0.25) 1px, transparent 1px),
+        /* クッキリ輝く小さめのドット */
+        radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
         /* 縦の極細ライン */
         linear-gradient(to right, rgba(214, 175, 55, 0.03) 1px, transparent 1px),
         /* 横の極細ライン */
         linear-gradient(to bottom, rgba(138, 79, 255, 0.04) 1px, transparent 1px);
     
-    /* 異なるサイズで重ねることで奥行きのある星空のような煌めきに */
-    background-size: 40px 40px, 28px 28px, 64px 64px, 64px 64px;
-    background-position: 0 0, 15px 15px, center center, center center;
+    /* 背景サイズと位置も残した3レイヤー分に合わせて整理 */
+    background-size: 28px 28px, 64px 64px, 64px 64px;
+    background-position: 15px 15px, center center, center center;
 }
 
 img {
