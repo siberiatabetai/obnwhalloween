@@ -1,1 +1,968 @@
+/* =====================================================
+   TRICK OR OBNW!
+===================================================== */
 
+:root{
+
+--orange:#ff9b2f;
+--orange-dark:#ea7d00;
+
+--purple:#4c255f;
+--purple-dark:#2d1738;
+
+--yellow:#ffe69a;
+
+--white:#ffffff;
+
+--bg:#2b1734;
+
+--text:#3b2f38;
+
+--shadow:0 12px 30px rgba(0,0,0,.15);
+
+--radius:18px;
+
+--max:1100px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:"Zen Maru Gothic",sans-serif;
+
+background:
+
+radial-gradient(circle at top,#5b2c75 0%,#341843 45%,#24122f 100%);
+
+color:var(--text);
+
+line-height:1.9;
+
+overflow-x:hidden;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+}
+
+a{
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+ul{
+
+padding-left:1.2rem;
+
+}
+
+li{
+
+margin-bottom:.8rem;
+
+}
+
+/*=============================
+背景
+=============================*/
+
+.bg-decoration{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+opacity:.08;
+
+background-image:
+
+radial-gradient(#fff 1px,transparent 1px);
+
+background-size:26px 26px;
+
+z-index:-1;
+
+}
+
+/*=============================
+Hero
+=============================*/
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+position:relative;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+180deg,
+rgba(255,155,47,.12),
+transparent 35%
+);
+
+}
+
+.hero-inner{
+
+width:min(100%,900px);
+
+text-align:center;
+
+z-index:2;
+
+}
+
+.logo{
+
+width:min(90%,700px);
+
+margin:auto;
+
+margin-bottom:40px;
+
+}
+
+.event-date{
+
+display:inline-block;
+
+padding:.4rem 1.2rem;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(6px);
+
+border-radius:999px;
+
+color:white;
+
+font-weight:bold;
+
+letter-spacing:.12em;
+
+margin-bottom:20px;
+
+}
+
+.event-name{
+
+font-size:clamp(1.5rem,3vw,2.4rem);
+
+color:white;
+
+margin-bottom:18px;
+
+}
+
+.lead{
+
+color:#ffecc7;
+
+font-size:1.1rem;
+
+margin-bottom:40px;
+
+}
+
+/*=============================
+Menu
+=============================*/
+
+.hero-menu{
+
+display:flex;
+
+justify-content:center;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.hero-menu a{
+
+background:
+
+linear-gradient(
+135deg,
+var(--orange),
+#ffb84e
+);
+
+padding:15px 34px;
+
+border-radius:999px;
+
+font-weight:bold;
+
+color:white;
+
+box-shadow:var(--shadow);
+
+}
+
+.hero-menu a:hover{
+
+transform:translateY(-5px);
+
+filter:brightness(1.05);
+
+}
+
+/*=============================
+Scroll
+=============================*/
+
+.scroll-guide{
+
+position:absolute;
+
+bottom:35px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+color:white;
+
+letter-spacing:.3em;
+
+font-size:.8rem;
+
+opacity:.8;
+
+}
+
+.scroll-guide::after{
+
+content:"";
+
+display:block;
+
+width:2px;
+
+height:60px;
+
+background:white;
+
+margin:12px auto 0;
+
+animation:scrollLine 1.8s infinite;
+
+}
+
+@keyframes scrollLine{
+
+0%{
+
+transform:scaleY(0);
+
+transform-origin:top;
+
+}
+
+50%{
+
+transform:scaleY(1);
+
+transform-origin:top;
+
+}
+
+100%{
+
+transform:scaleY(0);
+
+transform-origin:bottom;
+
+}
+
+}
+
+/*=============================
+Main
+=============================*/
+
+main{
+
+width:min(92%,var(--max));
+
+margin:auto;
+
+padding-bottom:100px;
+
+}
+
+.section{
+
+margin-bottom:90px;
+
+}
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.section-title h2{
+
+display:inline-block;
+
+background:
+
+linear-gradient(
+135deg,
+var(--orange),
+#ffbf55
+);
+
+padding:14px 40px;
+
+border-radius:999px;
+
+color:white;
+
+font-size:1.5rem;
+
+box-shadow:var(--shadow);
+
+}
+/*=============================
+カード
+=============================*/
+
+.card{
+
+    background:#fffdf9;
+
+    border:4px solid #f5b64a;
+
+    border-radius:28px;
+
+    padding:40px;
+
+    margin-bottom:32px;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.18);
+
+    position:relative;
+
+}
+
+.card::before{
+
+    content:"🎃";
+
+    position:absolute;
+
+    top:-18px;
+    left:24px;
+
+    font-size:1.7rem;
+
+}
+
+.card h3{
+
+    color:var(--purple);
+
+    font-size:1.4rem;
+
+    margin-bottom:18px;
+
+}
+
+.card p{
+
+    margin-bottom:1.2rem;
+
+}
+
+.card ul{
+
+    margin-top:12px;
+
+}
+
+.card li{
+
+    margin-bottom:.9rem;
+
+}
+
+.center{
+
+    text-align:center;
+
+}
+
+
+/*=============================
+呪文
+=============================*/
+
+.spell{
+
+    display:inline-block;
+
+    padding:.4rem 1rem;
+
+    margin:.4rem;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+        135deg,
+        #ff8c28,
+        #ffb84e);
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:1.15rem;
+
+}
+
+
+/*=============================
+注意枠
+=============================*/
+
+.notice{
+
+    background:#fff7dd;
+
+    border-left:8px solid var(--orange);
+
+    padding:18px 22px;
+
+    margin-top:28px;
+
+    border-radius:16px;
+
+}
+
+.notice p{
+
+    margin:0;
+
+}
+
+
+/*=============================
+参加カード
+=============================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:26px;
+
+    margin-bottom:36px;
+
+}
+
+.info-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    border-top:8px solid var(--orange);
+
+    transition:.35s;
+
+}
+
+.info-card:hover{
+
+    transform:
+        translateY(-8px);
+
+}
+
+.info-card h3{
+
+    color:var(--purple);
+
+    margin-bottom:18px;
+
+}
+
+.info-card p{
+
+    margin-bottom:1rem;
+
+}
+
+
+/*=============================
+ダウンロードボタン
+=============================*/
+
+.button-area{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    color:white;
+
+    font-weight:bold;
+
+    background:
+
+        linear-gradient(
+        135deg,
+        var(--orange),
+        #ffbf55);
+
+    box-shadow:var(--shadow);
+
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+/*=============================
+Googleフォーム
+=============================*/
+
+.entry-button{
+
+    display:inline-block;
+
+    margin-top:28px;
+
+    background:
+
+        linear-gradient(
+        135deg,
+        var(--purple),
+        #6b3b82);
+
+    color:white;
+
+    padding:20px 42px;
+
+    border-radius:999px;
+
+    font-size:1.1rem;
+
+    font-weight:bold;
+
+    box-shadow:var(--shadow);
+
+}
+
+.entry-button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/*=============================
+小さい文字
+=============================*/
+
+.small{
+
+    margin-top:18px;
+
+    color:#7c7477;
+
+    font-size:.9rem;
+
+}
+/*=============================
+Footer
+=============================*/
+
+footer{
+
+    background:
+        linear-gradient(
+        180deg,
+        #2c1737,
+        #1f1028);
+
+    color:white;
+
+    margin-top:120px;
+
+    padding:70px 20px;
+
+}
+
+.footer-inner{
+
+    width:min(100%,900px);
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.footer-inner h3{
+
+    font-size:2rem;
+
+    margin-bottom:12px;
+
+    color:var(--yellow);
+
+}
+
+.footer-inner p{
+
+    margin-bottom:18px;
+
+}
+
+.x-link{
+
+    display:inline-block;
+
+    margin-top:18px;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+        135deg,
+        var(--orange),
+        #ffb74a);
+
+    color:white;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+.x-link:hover{
+
+    transform:translateY(-4px);
+
+    filter:brightness(1.05);
+
+}
+
+.copyright{
+
+    margin-top:40px;
+
+    opacity:.7;
+
+    font-size:.9rem;
+
+}
+
+
+/*=============================
+Fade Animation
+=============================*/
+
+.fade{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/*=============================
+Responsive
+=============================*/
+
+@media (max-width:960px){
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+padding:60px 20px;
+
+}
+
+.logo{
+
+width:95%;
+
+}
+
+.card{
+
+padding:30px;
+
+}
+
+.hero-menu{
+
+gap:14px;
+
+}
+
+.hero-menu a{
+
+padding:14px 24px;
+
+}
+
+}
+
+
+@media (max-width:640px){
+
+body{
+
+font-size:15px;
+
+}
+
+.hero{
+
+min-height:auto;
+
+padding:60px 15px 80px;
+
+}
+
+.event-name{
+
+font-size:1.7rem;
+
+}
+
+.lead{
+
+font-size:1rem;
+
+}
+
+.hero-menu{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.hero-menu a{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+.section{
+
+margin-bottom:70px;
+
+}
+
+.section-title h2{
+
+font-size:1.25rem;
+
+padding:12px 28px;
+
+}
+
+.card{
+
+padding:24px;
+
+border-radius:22px;
+
+}
+
+.info-card{
+
+padding:24px;
+
+}
+
+.btn{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+.entry-button{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+.scroll-guide{
+
+display:none;
+
+}
+
+}
+
+
+/*=============================
+Large Screen
+=============================*/
+
+@media (min-width:1200px){
+
+.hero-inner{
+
+max-width:960px;
+
+}
+
+.card{
+
+padding:48px;
+
+}
+
+}
+
+
+/*=============================
+Selection Color
+=============================*/
+
+::selection{
+
+background:var(--orange);
+
+color:white;
+
+}
+
+
+/*=============================
+Smooth Hover
+=============================*/
+
+button,
+a{
+
+transition:
+
+background .3s,
+
+color .3s,
+
+transform .3s,
+
+box-shadow .3s;
+
+}
