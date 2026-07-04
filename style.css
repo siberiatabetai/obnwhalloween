@@ -97,7 +97,7 @@ li::before {
 }
 
 /*==============================
-Hero
+Hero （修正版：被り防止）
 ==============================*/
 
 .hero {
@@ -105,8 +105,9 @@ Hero
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    padding: 90px 20px;
+    /* 高さを85vhに広げ、下部にスクロールガイド用の余白（padding-bottom）をしっかり確保 */
+    min-height: 85vh;
+    padding: 80px 20px 140px; 
     overflow: hidden;
 }
 
@@ -114,7 +115,6 @@ Hero
     content: "";
     position: absolute;
     inset: 0;
-    /* 紫の空間に差し込むゴールドのラグジュアリーな光 */
     background: linear-gradient(150deg, rgba(212, 175, 55, 0.15), rgba(138, 79, 255, 0.1) 40%, transparent 70%);
 }
 
@@ -146,7 +146,6 @@ Hero
 
 .event-name {
     color: white;
-    /* 見出しを大きめ・太字に強調 */
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 900;
     letter-spacing: 0.05em;
@@ -173,6 +172,8 @@ Menu
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
+    /* ボタンの下にさらにマージンを設けて隔離 */
+    margin-bottom: 20px; 
 }
 
 .hero-menu a {
@@ -200,7 +201,8 @@ Menu
 .scroll-guide {
     position: absolute;
     left: 50%;
-    bottom: 24px;
+    /* bottomの位置を少し上げて固定 */
+    bottom: 30px;
     transform: translateX(-50%);
     font-size: .75rem;
     letter-spacing: .35em;
