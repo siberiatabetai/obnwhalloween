@@ -4,25 +4,19 @@
 
 :root{
 
---orange:#ff9b2f;
---orange-dark:#ea7d00;
+--orange:#d97a16;
 
---purple:#4c255f;
---purple-dark:#2d1738;
+--orange-dark:#b96000;
 
---yellow:#ffe69a;
+--purple:#342041;
 
---white:#ffffff;
+--purple-dark:#22122d;
 
---bg:#2b1734;
+--yellow:#d7bc79;
 
---text:#3b2f38;
+--shadow:0 8px 24px rgba(0,0,0,.12);
 
---shadow:0 12px 30px rgba(0,0,0,.15);
-
---radius:18px;
-
---max:1100px;
+--radius:12px;
 
 }
 
@@ -112,17 +106,9 @@ Hero
 
 .hero{
 
-min-height:100vh;
+min-height:75vh;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-padding:80px 20px;
-
-position:relative;
+padding:50px 20px;
 
 }
 
@@ -156,53 +142,38 @@ z-index:2;
 
 .logo{
 
-width:min(90%,700px);
+width:min(70%,520px);
 
-margin:auto;
-
-margin-bottom:40px;
+margin:auto auto 24px;
 
 }
 
 .event-date{
 
-display:inline-block;
+padding:6px 14px;
 
-padding:.4rem 1.2rem;
+font-size:.85rem;
 
-background:rgba(255,255,255,.12);
-
-backdrop-filter:blur(6px);
-
-border-radius:999px;
-
-color:white;
-
-font-weight:bold;
-
-letter-spacing:.12em;
-
-margin-bottom:20px;
+border-radius:6px;
 
 }
 
 .event-name{
 
-font-size:clamp(1.5rem,3vw,2.4rem);
+font-size:clamp(1.3rem,2vw,2rem);
 
-color:white;
+margin-bottom:12px;
 
-margin-bottom:18px;
+font-weight:700;
 
 }
-
 .lead{
 
-color:#ffecc7;
+font-size:1rem;
 
-font-size:1.1rem;
+margin-bottom:26px;
 
-margin-bottom:40px;
+color:#efe7d5;
 
 }
 
@@ -212,13 +183,7 @@ Menu
 
 .hero-menu{
 
-display:flex;
-
-justify-content:center;
-
-gap:18px;
-
-flex-wrap:wrap;
+gap:12px;
 
 }
 
@@ -246,9 +211,7 @@ box-shadow:var(--shadow);
 
 .hero-menu a:hover{
 
-transform:translateY(-5px);
-
-filter:brightness(1.05);
+transform:translateY(-2px);
 
 }
 
@@ -258,21 +221,9 @@ Scroll
 
 .scroll-guide{
 
-position:absolute;
+font-size:.7rem;
 
-bottom:35px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-color:white;
-
-letter-spacing:.3em;
-
-font-size:.8rem;
-
-opacity:.8;
+bottom:18px;
 
 }
 
@@ -338,7 +289,7 @@ padding-bottom:100px;
 
 .section{
 
-margin-bottom:90px;
+margin-bottom:56px;
 
 }
 
@@ -354,23 +305,21 @@ margin-bottom:35px;
 
 display:inline-block;
 
-background:
-
-linear-gradient(
-135deg,
-var(--orange),
-#ffbf55
-);
-
-padding:14px 40px;
-
-border-radius:999px;
+background:none;
 
 color:white;
 
-font-size:1.5rem;
+padding:0;
 
-box-shadow:var(--shadow);
+font-size:1.6rem;
+
+font-weight:700;
+
+box-shadow:none;
+
+border-bottom:2px solid var(--orange);
+
+padding-bottom:6px;
 
 }
 /*=============================
@@ -379,20 +328,15 @@ box-shadow:var(--shadow);
 
 .card{
 
-    background:#fffdf9;
+padding:28px;
 
-    border:4px solid #f5b64a;
+border-radius:12px;
 
-    border-radius:28px;
+border:1px solid rgba(255,255,255,.08);
 
-    padding:40px;
+box-shadow:
 
-    margin-bottom:32px;
-
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.18);
-
-    position:relative;
+0 6px 18px rgba(0,0,0,.08);
 
 }
 
@@ -411,20 +355,23 @@ box-shadow:var(--shadow);
 
 .card h3{
 
-    color:var(--purple);
+font-size:1.2rem;
 
-    font-size:1.4rem;
-
-    margin-bottom:18px;
+margin-bottom:14px;
 
 }
 
 .card p{
 
-    margin-bottom:1.2rem;
+margin-bottom:.8rem;
 
 }
 
+.card li{
+
+margin-bottom:.5rem;
+
+}
 .card ul{
 
     margin-top:12px;
@@ -518,19 +465,11 @@ box-shadow:var(--shadow);
 
 .info-card{
 
-    background:white;
+padding:22px;
 
-    border-radius:24px;
+border-radius:12px;
 
-    padding:30px;
-
-    text-align:center;
-
-    box-shadow:var(--shadow);
-
-    border-top:8px solid var(--orange);
-
-    transition:.35s;
+border-top:4px solid var(--orange);
 
 }
 
@@ -574,75 +513,19 @@ box-shadow:var(--shadow);
 
 }
 
-.btn{
+.btn,
+.entry-button,
+.x-link{
 
-    display:inline-block;
+border-radius:8px;
 
-    padding:16px 34px;
+padding:13px 26px;
 
-    border-radius:999px;
+font-size:.95rem;
 
-    color:white;
-
-    font-weight:bold;
-
-    background:
-
-        linear-gradient(
-        135deg,
-        var(--orange),
-        #ffbf55);
-
-    box-shadow:var(--shadow);
+font-weight:600;
 
 }
-
-.btn:hover{
-
-    transform:
-        translateY(-5px);
-
-}
-
-
-/*=============================
-Googleフォーム
-=============================*/
-
-.entry-button{
-
-    display:inline-block;
-
-    margin-top:28px;
-
-    background:
-
-        linear-gradient(
-        135deg,
-        var(--purple),
-        #6b3b82);
-
-    color:white;
-
-    padding:20px 42px;
-
-    border-radius:999px;
-
-    font-size:1.1rem;
-
-    font-weight:bold;
-
-    box-shadow:var(--shadow);
-
-}
-
-.entry-button:hover{
-
-    transform:translateY(-5px);
-
-}
-
-
 /*=============================
 小さい文字
 =============================*/
