@@ -49,21 +49,34 @@ body {
     color: var(--text-light);
     line-height: 1.85;
     overflow-x: hidden;
+    
     /* 背景：深みのある紫ベースの階層グラデーション */
     background: radial-gradient(circle at top, var(--bg-light) 0%, var(--bg-mid) 40%, var(--bg-dark) 100%);
     background-attachment: fixed;
 }
 
-/* ドットの背景装飾を微細に変更し、星空のようなきらめきに */
+/*==============================
+  背景の模様・装飾（ドット＆極細ライン）
+==============================*/
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
-    opacity: .08;
-    background: radial-gradient(circle, #ffffff 1px, transparent 1px);
-    background-size: 32px 32px;
     z-index: -1;
+    
+    /* 淡いドット（白）と、スタイリッシュな極細格子ライン（ゴールド・紫）の組み合わせ */
+    background-image: 
+        /* ① 32px間隔の繊細なドット模様 */
+        radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+        /* ② 縦の極細ライン */
+        linear-gradient(to right, rgba(214, 175, 55, 0.03) 1px, transparent 1px),
+        /* ③ 横の極細ライン */
+        linear-gradient(to bottom, rgba(138, 79, 255, 0.04) 1px, transparent 1px);
+    
+    /* 模様のサイズコントロール（ドットは32px、格子は64px四方） */
+    background-size: 32px 32px, 64px 64px, 64px 64px;
+    background-position: center center;
 }
 
 img {
