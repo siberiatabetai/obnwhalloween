@@ -1,5 +1,5 @@
 /*==================================================
-  TRICK OR OBNW! 2026 - Premium Luxury Ver.
+  TRICK OR OBNW! 2026 - Premium Luxury Ultimate Ver.
 ==================================================*/
 
 :root {
@@ -13,12 +13,12 @@
     --gold-dark: #aa8416;
 
     --purple-accent: #8a4fff;
-    --paper: rgba(25, 16, 41, 0.75); /* 半透明の深紫で高級感を演出 */
+    --paper: rgba(25, 16, 41, 0.82); /* 半透明の深紫で高級感を演出 */
     --text-light: #f5f2f9;
     --text-muted: #bdaec6;
 
     --border-gold: linear-gradient(135deg, #d4af37, #aa8416);
-    --shadow-premium: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(138, 79, 255, 0.1);
+    --shadow-premium: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(138, 79, 255, 0.15);
 
     --radius: 16px;
     --content: 960px;
@@ -37,13 +37,11 @@ html {
 }
 
 body {
-    /* スタイリッシュで太いモダンなゴシック体系の指定 */
+    /* 本文用：可読性が高くスタイリッシュなモダンゴシック */
     font-family: 
         "Helvetica Neue",
         Arial,
-        "Hiragino Kaku Gothic ProN",
         "Hiragino Sans",
-        "BIZ UDPGothic",
         "Meiryo",
         sans-serif;
     color: var(--text-light);
@@ -56,7 +54,7 @@ body {
 }
 
 /*==============================
-  背景の模様・装飾（ドット＆極細ライン）
+  背景の模様・装飾（ドットの輝きアップ＆格子）
 ==============================*/
 body::before {
     content: "";
@@ -65,18 +63,20 @@ body::before {
     pointer-events: none;
     z-index: -1;
     
-    /* 淡いドット（白）と、スタイリッシュな極細格子ライン（ゴールド・紫）の組み合わせ */
+    /* ドットの不透明度を上げ、サイズに強弱をつけることで「キラキラ感」を強調 */
     background-image: 
-        /* ① 32px間隔の繊細なドット模様 */
-        radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-        /* ② 縦の極細ライン */
+        /* 強めに輝く大きめのドット */
+        radial-gradient(circle, rgba(255, 255, 255, 0.35) 1.5px, transparent 1.5px),
+        /* 奥で淡く輝く小さめのドット */
+        radial-gradient(circle, rgba(212, 175, 55, 0.25) 1px, transparent 1px),
+        /* 縦の極細ライン */
         linear-gradient(to right, rgba(214, 175, 55, 0.03) 1px, transparent 1px),
-        /* ③ 横の極細ライン */
+        /* 横の極細ライン */
         linear-gradient(to bottom, rgba(138, 79, 255, 0.04) 1px, transparent 1px);
     
-    /* 模様のサイズコントロール（ドットは32px、格子は64px四方） */
-    background-size: 32px 32px, 64px 64px, 64px 64px;
-    background-position: center center;
+    /* 異なるサイズで重ねることで奥行きのある星空のような煌めきに */
+    background-size: 40px 40px, 28px 28px, 64px 64px, 64px 64px;
+    background-position: 0 0, 15px 15px, center center, center center;
 }
 
 img {
@@ -110,7 +110,7 @@ li::before {
 }
 
 /*==============================
-Hero （修正版：被り防止）
+  Hero （被り防止対応版）
 ==============================*/
 
 .hero {
@@ -118,7 +118,6 @@ Hero （修正版：被り防止）
     display: flex;
     justify-content: center;
     align-items: center;
-    /* 高さを85vhに広げ、下部にスクロールガイド用の余白（padding-bottom）をしっかり確保 */
     min-height: 85vh;
     padding: 80px 20px 140px; 
     overflow: hidden;
@@ -177,7 +176,7 @@ Hero （修正版：被り防止）
 }
 
 /*==============================
-Menu
+  Menu
 ==============================*/
 
 .hero-menu {
@@ -185,7 +184,6 @@ Menu
     justify-content: center;
     gap: 18px;
     flex-wrap: wrap;
-    /* ボタンの下にさらにマージンを設けて隔離 */
     margin-bottom: 20px; 
 }
 
@@ -214,7 +212,6 @@ Menu
 .scroll-guide {
     position: absolute;
     left: 50%;
-    /* bottomの位置を少し上げて固定 */
     bottom: 30px;
     transform: translateX(-50%);
     font-size: .75rem;
@@ -241,7 +238,7 @@ Menu
 }
 
 /*==============================
-Main
+  Main
 ==============================*/
 
 main {
@@ -259,25 +256,34 @@ main {
     text-align: center;
 }
 
-/* 見出し：大きめ・極太ゴシックでスタイリッシュに */
+/* ★ h2見出し：さらに大きく、より極太で幾何学的なスタイリッシュフォントに変更 
+  本文のフォントとは明確に変え、特筆した存在感を出しています。
+*/
 .section-title h2 {
     display: inline-block;
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-family: 
+        "Impact", 
+        "Arial Black", 
+        "Hiragino Kaku Gothic StdN", 
+        "Tw Cen MT Condensed Extra Bold", 
+        sans-serif;
+    font-size: clamp(2.0rem, 4.5vw, 2.8rem); /* 以前より一回りサイズアップ */
     font-weight: 900;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: #ffffff;
-    padding: 0 10px 12px;
+    padding: 0 10px 14px;
     position: relative;
+    text-shadow: 0 4px 15px rgba(138, 79, 255, 0.3);
 }
 
-/* 高級感のあるゴールドグラデーションの下線アンダーバーに変更 */
+/* 高級感のあるゴールドグラデーションの下線アンダーバー */
 .section-title h2::after {
     content: "";
     position: absolute;
-    left: 15%;
+    left: 10%;
     bottom: 0;
-    width: 70%;
-    height: 3px;
+    width: 80%;
+    height: 4px;
     background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), transparent);
     border-radius: 999px;
 }
@@ -293,7 +299,7 @@ main {
     padding: 35px 40px;
     box-shadow: var(--shadow-premium);
     margin-bottom: 30px;
-    backdrop-filter: blur(10px); /* 背景をボカして高級感をアップ */
+    backdrop-filter: blur(10px);
 }
 
 .card:last-child {
@@ -504,4 +510,61 @@ footer {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 32px;
-    border-radius: 50
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.x-link:hover {
+    transform: translateY(-3px);
+    background: #fff;
+    color: var(--bg-dark);
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.05em;
+}
+
+/*====================================
+  Fade Animation
+====================================*/
+
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity .8s cubic-bezier(0.25, 1, 0.5, 1), transform .8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.fade.show {
+    opacity: 1;
+    transform: none;
+}
+
+/*====================================
+  ★ Responsive Media Queries（バグ完全修正版）
+====================================*/
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr; /* スマホで確実に1カラムへ */
+        gap: 20px;
+    }
+
+    .card {
+        padding: 26px 22px;
+    }
+
+    .info-card {
+        padding: 24px;
+    }
+    
+    .hero {
+        padding: 60px 20px 120px;
+    }
+} /* 元コードで欠損していた閉じカッコを修正 */
