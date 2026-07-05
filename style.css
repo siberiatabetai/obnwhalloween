@@ -63,15 +63,10 @@ body::before {
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    /* ドット */
     background-image: 
-        /* クッキリ輝く小さめのドット */
         radial-gradient(circle, rgba(255, 255, 255, 0.35) 1px, transparent 1px),
-        /* 縦ライン */
         linear-gradient(to right, rgba(214, 175, 55, 0.03) 1px, transparent 1px),
-        /* 横ライン */
         linear-gradient(to bottom, rgba(138, 79, 255, 0.04) 1px, transparent 1px);
-    /* 整理 */
     background-size: 28px 28px, 64px 64px, 64px 64px;
     background-position: 15px 15px, center center, center center;
 }
@@ -400,7 +395,6 @@ main > section:nth-last-child(1) .section-title h2::before {
 
 .spell {
     display: inline-block;
-    /* 周囲の文字と上下中央で綺麗に整列させる指定 */
     vertical-align: middle;
     padding: 2px 4px 4px 4px;
     margin: 0 4px;
@@ -413,7 +407,6 @@ main > section:nth-last-child(1) .section-title h2::before {
     font-family: "Montserrat", "Hiragino Sans", sans-serif;
     position: relative;
     overflow: hidden;
-    /* 文字がバッジ内で上にズレるのを防ぐための補正 */
     line-height: 1.2;
 }
 
