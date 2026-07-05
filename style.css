@@ -3,24 +3,19 @@
 ==================================================*/
 
 :root {
-    
     --bg-dark: #120a21;
     --bg-mid: #25123e;
     --bg-light: #3d1b5c;
-
     --gold-light: #ffe596;
     --gold: #d4af37;
     --gold-dark: #aa8416;
-
     --purple-accent: #8a4fff;
     --paper: rgba(25, 16, 41, 0.82); 
     --text-light: #f5f2f9;
     --text-muted: #bdaec6;
-
     --border-gold: linear-gradient(135deg, #d4af37, #aa8416);
     --shadow-premium: 0 15px 35px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(138, 79, 255, 0.15);
-
-    --radius: 16px;
+    --radius: 5px;
     --content: 960px;
 }
 
@@ -55,7 +50,6 @@ body {
     color: var(--text-light);
     line-height: 1.85;
     overflow-x: hidden;
-    
     background: radial-gradient(circle at top, var(--bg-light) 0%, var(--bg-mid) 40%, var(--bg-dark) 100%);
     background-attachment: fixed;
 }
@@ -69,7 +63,6 @@ body::before {
     inset: 0;
     pointer-events: none;
     z-index: -1;
-    
     /* ドット */
     background-image: 
         /* クッキリ輝く小さめのドット */
@@ -78,7 +71,6 @@ body::before {
         linear-gradient(to right, rgba(214, 175, 55, 0.03) 1px, transparent 1px),
         /* 横ライン */
         linear-gradient(to bottom, rgba(138, 79, 255, 0.04) 1px, transparent 1px);
-    
     /* 整理 */
     background-size: 28px 28px, 64px 64px, 64px 64px;
     background-position: 15px 15px, center center, center center;
@@ -149,7 +141,6 @@ li::before {
 }
 
 .event-date {
-    display: inline-block;
     display: inline-block;
     padding: 4px 15px;
     background: rgba(212, 175, 55, 0.15);
@@ -382,7 +373,7 @@ main > section:nth-last-child(1) .section-title h2::before {
 }
 
 .card p {
-    margin-bottom: 16px;
+    margin-bottom: 5px;
     color: var(--text-light);
 }
 
@@ -419,12 +410,9 @@ main > section:nth-last-child(1) .section-title h2::before {
     font-weight: 800;
     font-size: .95rem;
     box-shadow: 0 4px 12px rgba(212, 175, 55, 0.5);
-    
     font-family: "Montserrat", "Hiragino Sans", sans-serif;
-    
     position: relative;
     overflow: hidden;
-    
     /* 文字がバッジ内で上にズレるのを防ぐための補正 */
     line-height: 1.2;
 }
@@ -456,6 +444,7 @@ main > section:nth-last-child(1) .section-title h2::before {
         left: 180%;
     }
 }
+
 /*====================================
   Notice
 ====================================*/
@@ -653,36 +642,33 @@ footer {
 ====================================*/
 
 @media (max-width: 768px) {
-body {
-     line-height: 1.6;
-     font-size: 0.9rem;
-}
-.hero-menu {
-    gap: 10px;
-}
+    body {
+        line-height: 1.6;
+        font-size: 0.9rem;
+    }
+    .hero-menu {
+        gap: 10px;
+    }
     .cards {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-
     .card {
         padding: 26px 22px;
     }
-
     .info-card {
         padding: 24px;
     }
-    
     .hero {
         padding: 60px 20px 120px;
     }
-.lead {
-    font-size: 1.5rem;
-    letter-spacing: 0;
-    line-height: 130%;
-}
-.section-title h2 {
-    line-height: 130%;
-    font-size: 1.5rem;
-}
+    .lead {
+        font-size: 1.5rem;
+        letter-spacing: 0;
+        line-height: 130%;
+    }
+    .section-title h2 {
+        line-height: 130%;
+        font-size: 1.5rem;
+    }
 }
